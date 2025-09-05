@@ -1,339 +1,342 @@
-<!DOCTYPE html>  <html lang="ar" dir="rtl">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>الملف الشخصي - أباذر</title>  
-    <link rel="preconnect" href="https://fonts.googleapis.com">  
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">  
-    <style>  
-        :root {  
-            --light-pink: #fbe5f9; /* Background color */  
-            --dark-pink: #eec1f2; /* Card background */  
-            --text-color: #5c0b6b; /* Main text color */  
-            --heading-color: #7b008d; /* Heading text color */  
-            --border-radius: 15px;  
-            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
-        }  body {  
-        font-family: 'Cairo', sans-serif;  
-        background-color: var(--light-pink);  
-        margin: 0;  
-        padding: 20px;  
-        display: flex;  
-        flex-direction: column;  
-        align-items: center;  
-        color: var(--text-color);  
-        min-height: 100vh;  
-        box-sizing: border-box;  
-    }  
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - أباذر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-pink: #fbe5f9; /* Background color */
+            --dark-pink: #eec1f2; /* Card background */
+            --text-color: #5c0b6b; /* Main text color */
+            --heading-color: #7b008d; /* Heading text color */
+            --border-radius: 15px;
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .container {  
-        width: 100%;  
-        max-width: 400px;  
-        margin-bottom: 20px;  
-    }  
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-pink);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-color);
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
 
-    .header {  
-        background-color: var(--dark-pink);  
-        border-radius: var(--border-radius);  
-        padding: 15px;  
-        text-align: center;  
-        box-shadow: var(--box-shadow);  
-        margin-bottom: 20px;  
-        position: relative;  
-    }  
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
 
-    .profile-pic-container {  
-        width: 100px;  
-        height: 100px;  
-        border-radius: 50%;  
-        overflow: hidden;  
-        border: 3px solid white;  
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  
-        position: absolute;  
-        top: -50px; /* Adjust to move above the card */  
-        left: 50%;  
-        transform: translateX(-50%);  
-        background-color: #ccc; /* Placeholder if image not loaded */  
-    }  
+        .header {
+            background-color: var(--dark-pink);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 20px;
+            position: relative;
+        }
 
-    .profile-pic {  
-        width: 100%;  
-        height: 100%;  
-        object-fit: cover;  
-    }  
+        .profile-pic-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: -50px; /* Adjust to move above the card */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ccc; /* Placeholder if image not loaded */
+        }
 
-    .header h1 {  
-        color: var(--heading-color);  
-        font-size: 1.8em;  
-        margin-top: 60px; /* Space for profile picture */  
-        margin-bottom: 5px;  
-    }  
-    .header .welcome-msg {  
-        color: var(--text-color);  
-        font-size: 0.9em;  
-        display: flex;  
-        align-items: center;  
-        justify-content: center;  
-    }  
-    .header .welcome-msg span {  
-        margin: 0 5px;  
-        font-size: 1.2em; /* Heart size */  
-        color: #ff69b4; /* Pink heart */  
-    }  
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-
-    .info-card {  
-        background-color: var(--dark-pink);  
-        border-radius: var(--border-radius);  
-        padding: 15px;  
-        margin-bottom: 15px;  
-        box-shadow: var(--box-shadow);  
-        display: flex;  
-        align-items: center;  
-    }  
-
-    .info-card .icon {  
-        margin-left: 10px;  
-        font-size: 1.5em;  
-        color: var(--heading-color);  
-    }  
-
-    .info-card p {  
-        margin: 0;  
-        flex-grow: 1;  
-    }  
-
-    .section-title {  
-        color: var(--heading-color);  
-        font-size: 1.4em;  
-        font-weight: bold;  
-        text-align: center;  
-        margin-top: 30px;  
-        margin-bottom: 15px;  
-        position: relative;  
-    }  
-
-    .section-title span {  
-        margin: 0 5px;  
-        color: #ffd700; /* Gold star */  
-        font-size: 1.2em;  
-    }  
-
-    .section-title.hobbies span {  
-        color: #ff69b4; /* Pink heart */  
-    }  
-
-    .footer {  
-        margin-top: 30px;  
-        text-align: center;  
-        font-size: 0.8em;  
-        color: #888;  
-    }  
-
-    /* Icons styling */  
-    .icon-small {  
-        font-size: 1em;  
-        margin-left: 5px;  
-        color: var(--heading-color);  
-    }  
-    .flag {  
-        width: 20px;  
-        height: auto;  
-        margin-left: 5px;  
-        vertical-align: middle;  
-    }  
-    .clock-display {  
-        display: flex;  
-        flex-direction: column;  
-        align-items: center;  
-        width: 100%;  
-    }  
-    .clock-time {  
-        font-size: 1.8em;  
-        font-weight: bold;  
-        color: var(--heading-color);  
-        margin-bottom: 5px;  
-    }  
-    .clock-date {  
-        font-size: 0.9em;  
-        color: var(--text-color);  
-    }  
-    .visitor-count {  
-        display: flex;  
-        align-items: center;  
-        justify-content: center;  
-        width: 100%;  
-    }  
-    .visitor-count .count {  
-        font-size: 1.2em;  
-        font-weight: bold;  
-        color: var(--heading-color);  
-        margin: 0 5px;  
-    }  
-    .quote-card {  
-        background-color: var(--dark-pink);  
-        border-radius: var(--border-radius);  
-        padding: 15px;  
-        margin-bottom: 15px;  
-        box-shadow: var(--box-shadow);  
-        text-align: center;  
-    }  
-    .quote-card .quote-text {  
-        font-style: italic;  
-        font-size: 1.1em;  
-        color: var(--text-color);  
-        margin-bottom: 10px;  
-    }  
-    .quote-card .flower-icon {  
-        color: #ff69b4; /* Pink flower */  
-        font-size: 1.2em;  
-        margin: 0 5px;  
-    }  
-</style>
-
-</head>  
-<body>  
-    <div class="container">  
-        <div class="header">  
-            <div class="profile-pic-container">  
-                <img src="YOUR_PROFILE_IMAGE_URL_HERE" alt="صورة شخصية" class="profile-pic">  
-            </div>  
-            <h1>بطاقة المعلومات الشخصية</h1>  
-            <p class="welcome-msg">مرحباً بكم في معلوماتي <span>❤️</span></p>  
-        </div>  <div class="info-card">  
-        <span class="icon">📍</span>  
-        <p>السكن: العراق - ذي قار <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/20px-Flag_of_Iraq.svg.png" alt="علم العراق" class="flag"></p>  
-    </div>  
-
-    <div class="info-card">  
-        <span class="icon">👤</span>  
-        <p>الاسم: أباذر</p>  
-    </div>  
-
-    <div class="info-card">  
-        <span class="icon">🕒</span>  
-        <div class="clock-display">  
-            <p>توقيت العراق الآن</p>  
-            <p class="clock-time" id="current-time"></p>  
-            <p class="clock-date" id="current-hijri-date"></p>  
-            <p class="clock-date" id="current-gregorian-date"></p>  
-        </div>  
-    </div>  
-
-    <div class="info-card">  
-        <span class="icon">👥</span>  
-        <div class="visitor-count">  
-            <p>عدد زوار موقعي:</p>  
-            <p class="count">889 زائر</p>  
-        </div>  
-    </div>  
-
-    <h2 class="section-title"><span>🌟</span> السيرة الذاتية <span>🌟</span></h2>  
-    <div class="info-card">  
-        <span class="icon">📝</span>  
-        <p>حاصل على شهادة بكالوريوس</p>  
-    </div>  
-    <div class="info-card">  
-        <span class="icon">🎓</span>  
-        <p>التخصص: صيدلة</p>  
-    </div>  
-    <div class="info-card">  
-        <span class="icon">🎯</span>  
-        <p>الهدف: شهادة الدكتورا</p>  
-    </div>  
-
-    <h2 class="section-title hobbies"><span>❤️</span> هواياتي المفضلة <span>❤️</span></h2>  
-    <div class="info-card">  
-        <span class="icon">🏃‍♂️</span>  
-        <p>الرياضة</p>  
-    </div>  
-    <div class="info-card">  
-        <span class="icon">📚</span>  
-        <p>قراءة كتب التاريخ</p>  
-    </div>  
-    <div class="info-card">  
-        <span class="icon">✍️</span>  
-        <p>كتابة الشعر</p>  
-    </div>  
-
-    <h2 class="section-title hobbies"><span>🌸</span> مقولة اليوم <span>🌸</span></h2>  
-    <div class="quote-card">  
-        <p class="quote-text">كل يوم جديد هو فرصة ذهبية لتكون أفضل نسخة من نفسك <span>✨</span></p>  
-    </div>  
-
-    <div class="footer">  
-        <p>المطور 2025 • أباذر</p>  
-    </div>  
-</div>  
-
-<script>  
-    // Hijri Date Library (simplified example - for accurate dates, consider a more robust library)  
-    function getHijriDate() {  
-        const today = new Date();  
-        const year = today.getFullYear();  
-        const month = today.getMonth() + 1;  
-        const day = today.getDate();  
-
-        // A very simplified approximation. For real-world use, use a dedicated library.  
-        // This example simply offsets the Gregorian date.  
-        let hijriYear = year - 579;  
-        let hijriMonth = month + 4; // Approximation  
-        let hijriDay = day - 10; // Approximation  
-
-        if (hijriDay <= 0) {  
-            hijriMonth--;  
-            if (hijriMonth <= 0) {  
-                hijriMonth = 12;  
-                hijriYear--;  
-            }  
-            hijriDay += 30; // Assuming 30 days for simplicity  
-        }  
-         if (hijriMonth > 12) {  
-            hijriMonth -= 12;  
-            hijriYear++;  
-        }  
-
-        const hijriMonths = [  
-            'محرم', 'صفر', 'ربيع الأول', 'ربيع الثاني', 'جمادى الأولى', 'جمادى الآخرة',  
-            'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'  
-        ];  
-
-        return `${hijriDay} ${hijriMonths[hijriMonth - 1]} ${hijriYear} هـ`;  
-    }  
-
-    function updateTime() {  
-        const now = new Date();  
-        // Get current time in Baghdad (UTC+3)  
-        const optionsTime = {  
-            hour: '2-digit',  
-            minute: '2-digit',  
-            second: '2-digit',  
-            hour12: false,  
-            timeZone: 'Asia/Baghdad'  
-        };  
-        const timeString = now.toLocaleTimeString('ar-IQ', optionsTime);  
-        document.getElementById('current-time').textContent = `${timeString} ص`;  
-
-        // Get Gregorian Date  
-        const optionsGregorianDate = {  
-            year: 'numeric',  
-            month: 'long',  
-            day: 'numeric'  
-        };  
-        const gregorianDateString = now.toLocaleDateString('ar-IQ', optionsGregorianDate);  
-        document.getElementById('current-gregorian-date').textContent = gregorianDateString;  
+        .header h1 {
+            color: var(--heading-color);
+            font-size: 1.8em;
+            margin-top: 60px; /* Space for profile picture */
+            margin-bottom: 5px;
+        }
+        .header .welcome-msg {
+            color: var(--text-color);
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header .welcome-msg span {
+            margin: 0 5px;
+            font-size: 1.2em; /* Heart size */
+            color: #ff69b4; /* Pink heart */
+        }
 
 
-        // Get Hijri Date  
-        document.getElementById('current-hijri-date').textContent = getHijriDate();  
-    }  
+        .info-card {
+            background-color: var(--dark-pink);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+        }
 
-    // Update time every second  
-    setInterval(updateTime, 1000);  
-    // Initial call to display time immediately  
-    updateTime();  
-</script>
+        .info-card .icon {
+            margin-left: 10px;
+            font-size: 1.5em;
+            color: var(--heading-color);
+        }
 
-</body>  
+        .info-card p {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .section-title {
+            color: var(--heading-color);
+            font-size: 1.4em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title span {
+            margin: 0 5px;
+            color: #ffd700; /* Gold star */
+            font-size: 1.2em;
+        }
+
+        .section-title.hobbies span {
+            color: #ff69b4; /* Pink heart */
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* Icons styling */
+        .icon-small {
+            font-size: 1em;
+            margin-left: 5px;
+            color: var(--heading-color);
+        }
+        .flag {
+            width: 20px;
+            height: auto;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        .clock-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .clock-time {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 5px;
+        }
+        .clock-date {
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+        .visitor-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .visitor-count .count {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin: 0 5px;
+        }
+        .quote-card {
+            background-color: var(--dark-pink);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        .quote-card .quote-text {
+            font-style: italic;
+            font-size: 1.1em;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .quote-card .flower-icon {
+            color: #ff69b4; /* Pink flower */
+            font-size: 1.2em;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-pic-container">
+                <img src="IMG_20230502_015539_971.jpg" alt="صورة شخصية" class="profile-pic">
+            </div>
+            <h1>بطاقة المعلومات الشخصية</h1>
+            <p class="welcome-msg">مرحباً بكم في معلوماتي <span>❤️</span></p>
+        </div>
+
+        <div class="info-card">
+            <span class="icon">📍</span>
+            <p>السكن: العراق - ذي قار <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Flag_of_Iraq.svg/20px-Flag_of_Iraq.svg.png" alt="علم العراق" class="flag"></p>
+        </div>
+
+        <div class="info-card">
+            <span class="icon">👤</span>
+            <p>الاسم: أباذر</p>
+        </div>
+
+        <div class="info-card">
+            <span class="icon">🕒</span>
+            <div class="clock-display">
+                <p>توقيت العراق الآن</p>
+                <p class="clock-time" id="current-time"></p>
+                <p class="clock-date" id="current-hijri-date"></p>
+                <p class="clock-date" id="current-gregorian-date"></p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <span class="icon">👥</span>
+            <div class="visitor-count">
+                <p>عدد زوار موقعي:</p>
+                <p class="count">889 زائر</p>
+            </div>
+        </div>
+
+        <h2 class="section-title"><span>🌟</span> السيرة الذاتية <span>🌟</span></h2>
+        <div class="info-card">
+            <span class="icon">📝</span>
+            <p>حاصل على شهادة بكالوريوس</p>
+        </div>
+        <div class="info-card">
+            <span class="icon">🎓</span>
+            <p>التخصص: صيدلة</p>
+        </div>
+        <div class="info-card">
+            <span class="icon">🎯</span>
+            <p>الهدف: شهادة الدكتورا</p>
+        </div>
+
+        <h2 class="section-title hobbies"><span>❤️</span> هواياتي المفضلة <span>❤️</span></h2>
+        <div class="info-card">
+            <span class="icon">🏃‍♂️</span>
+            <p>الرياضة</p>
+        </div>
+        <div class="info-card">
+            <span class="icon">📚</span>
+            <p>قراءة كتب التاريخ</p>
+        </div>
+        <div class="info-card">
+            <span class="icon">✍️</span>
+            <p>كتابة الشعر</p>
+        </div>
+
+        <h2 class="section-title hobbies"><span>🌸</span> مقولة اليوم <span>🌸</span></h2>
+        <div class="quote-card">
+            <p class="quote-text">كل يوم جديد هو فرصة ذهبية لتكون أفضل نسخة من نفسك <span>✨</span></p>
+        </div>
+
+        <div class="footer">
+            <p>المطور 2025 • أباذر</p>
+        </div>
+    </div>
+
+    <script>
+        // Hijri Date Library (simplified example - for accurate dates, consider a more robust library)
+        function getHijriDate() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+
+            // A very simplified approximation. For real-world use, use a dedicated library.
+            // This example simply offsets the Gregorian date.
+            let hijriYear = year - 579;
+            let hijriMonth = month + 4; // Approximation
+            let hijriDay = day - 10; // Approximation
+
+            if (hijriDay <= 0) {
+                hijriMonth--;
+                if (hijriMonth <= 0) {
+                    hijriMonth = 12;
+                    hijriYear--;
+                }
+                hijriDay += 30; // Assuming 30 days for simplicity
+            }
+             if (hijriMonth > 12) {
+                hijriMonth -= 12;
+                hijriYear++;
+            }
+
+            const hijriMonths = [
+                'محرم', 'صفر', 'ربيع الأول', 'ربيع الثاني', 'جمادى الأولى', 'جمادى الآخرة',
+                'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'
+            ];
+
+            return `${hijriDay} ${hijriMonths[hijriMonth - 1]} ${hijriYear} هـ`;
+        }
+
+        function updateTime() {
+            const now = new Date();
+            // Get current time in Baghdad (UTC+3)
+            const optionsTime = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                timeZone: 'Asia/Baghdad'
+            };
+            const timeString = now.toLocaleTimeString('ar-IQ', optionsTime);
+            document.getElementById('current-time').textContent = `${timeString} ص`;
+
+            // Get Gregorian Date
+            const optionsGregorianDate = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const gregorianDateString = now.toLocaleDateString('ar-IQ', optionsGregorianDate);
+            document.getElementById('current-gregorian-date').textContent = gregorianDateString;
+
+
+            // Get Hijri Date
+            document.getElementById('current-hijri-date').textContent = getHijriDate();
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+        // Initial call to display time immediately
+        updateTime();
+    </script>
+</body>
 </html>
